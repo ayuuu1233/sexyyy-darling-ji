@@ -1,0 +1,248 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>One Year to Forever 🌸🤍 — Ayush ❤️ Manvi</title>
+  <style>
+    :root {
+      --pink:#ff4d88;
+      --pink-2:#ffccdd;
+      --blue-2:#d1e7ff;
+      --bg-1:#ffe6f0;
+      --bg-2:#fff0f5;
+      --accent:#e60073;
+      --glow-1:#ff66cc;
+      --glow-2:#ff3385;
+      --glow-3:#ff1a75;
+    }/* Base */
+html,body {height:100%;}
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, "Poppins", Arial, sans-serif;
+  color: #333;
+  text-align: center;
+  overflow-x: hidden;
+  background: linear-gradient(135deg, var(--bg-1), var(--bg-2));
+}
+h1,h2 {margin: .2em 0;}
+.container {width:min(920px, 92vw); margin:0 auto;}
+.muted {opacity:.8}
+
+/* SECTION 1: Loading / Intro */
+.intro {padding: 56px 12px 24px; position:relative;}
+.intro h1.typing {
+  display:inline-block;
+  font-size: clamp(28px, 6vw, 44px);
+  color: var(--pink);
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid var(--pink);
+  width: 0;
+  animation: typing 4s steps(32, end) forwards, caret 1s step-end infinite;
+}
+.intro h2.names { 
+  font-size: clamp(22px, 5vw, 36px);
+  margin-top: 14px; 
+  opacity:0; 
+  animation: fadeIn 1.2s ease-out 4.2s forwards; 
+  position:relative; 
+  text-shadow:0 0 10px rgba(255,102,204,.6);
+}
+.sparkle-area {position: relative; height: 18px;}
+.sparkle {position:absolute; font-size:18px; pointer-events:none; opacity:0; animation: sparkleUp 1.6s ease-out forwards;}
+
+#date-counter {margin-top: 10px; font-weight: 600;}
+
+/* SECTION 2: Love Story Timeline */
+.timeline {padding: 28px 12px;}
+.timeline h2 {color: var(--pink); font-size: clamp(22px, 4.6vw, 32px);}
+.cards {display:grid; grid-template-columns: repeat(auto-fit, minmax(240px,1fr)); gap:16px; margin-top:16px;}
+.card {background:#fff; border-radius:20px; padding:16px; box-shadow:0 10px 25px rgba(0,0,0,.08); font-size:18px;}
+
+/* SECTION 3: Proposal Conversation (chat UI) */
+.chat {padding: 32px 12px;}
+.chat-wrap {max-width: 760px; margin:0 auto;}
+.bubble {display:inline-block; max-width:72%; padding:14px 18px; margin:12px; border-radius:18px; font-size:17px; text-align:left; line-height:1.45; position:relative;}
+.bubble.ayush {background: var(--pink-2); float:left; clear:both;}
+.bubble.manvi {background: var(--blue-2); float:right; clear:both;}
+.bubble.ayush:after {content:""; position:absolute; left:-8px; top:12px; width:0; height:0; border-right:10px solid var(--pink-2); border-top:10px solid transparent; border-bottom:10px solid transparent;}
+.bubble.manvi:after {content:""; position:absolute; right:-8px; top:12px; width:0; height:0; border-left:10px solid var(--blue-2); border-top:10px solid transparent; border-bottom:10px solid transparent;}
+.clearfix {clear:both;}
+
+/* SECTION 4: Anniversary Surprise */
+.surprise {padding: 36px 12px; position:relative; overflow:hidden;}
+.surprise h2 {color: var(--accent);}
+.btn {padding:12px 18px; font-size:16px; background: var(--pink); color:#fff; border:none; border-radius:14px; cursor:pointer; transition:.2s transform, .2s opacity;}
+.btn:hover {transform: translateY(-1px);}
+
+/* Floating hearts in Surprise section */
+.float-heart {position:absolute; font-size:22px; opacity:0.9; animation: floatUp 3.4s ease-in forwards;}
+
+/* Promise Modal */
+.modal-backdrop {position:fixed; inset:0; background:rgba(0,0,0,.45); display:none; align-items:center; justify-content:center; padding:20px;}
+.modal {background:#fff; border-radius:18px; max-width:640px; width:min(92vw,640px); padding:22px; text-align:left; box-shadow:0 20px 60px rgba(0,0,0,.35);}
+.modal h3 {margin-top:0; color:var(--pink)}
+.modal .actions {text-align:right; margin-top:10px;}
+.modal .close {background:#eee; color:#333}
+
+/* SECTION 5: Ending with petals */
+.ending {padding: 80px 12px 120px; background: linear-gradient(135deg, #ffd6eb, #fdddf5, #e0b3ff); color:#fff; position:relative; overflow:hidden;}
+.ending h1 {font-size: clamp(24px, 6vw, 40px); text-shadow: 0 0 10px var(--glow-1); animation: glow 2s ease-in-out infinite alternate;}
+
+/* Falling petals */
+.petal {position: fixed; top:-24px; font-size:24px; animation: fall 8s linear forwards; pointer-events:none;}
+
+/* Click Heart Cursor */
+.click-heart {position:absolute; font-size:20px; pointer-events:none; animation: clickFloat 1.25s ease-out forwards;}
+
+/* Keyframes */
+@keyframes typing {from{width:0} to{width:100%}}
+@keyframes caret {50% {border-color: transparent}}
+@keyframes fadeIn {to{opacity:1}}
+@keyframes sparkleUp {from{transform: translateY(12px) scale(.8); opacity:.0} to{transform: translateY(-14px) scale(1); opacity:1}}
+@keyframes floatUp {from{transform: translateY(24px); opacity:.0} to{transform: translateY(-140px); opacity:0}}
+@keyframes glow {from{ text-shadow: 0 0 10px var(--glow-1);} to{ text-shadow: 0 0 22px var(--glow-2), 0 0 44px var(--glow-3);} }
+@keyframes fall {from{transform: translateY(0) rotate(0deg); opacity:1} to{transform: translateY(100vh) rotate(180deg); opacity:0}}
+@keyframes clickFloat {from{transform: translate(-50%,0) scale(1); opacity:1} to{transform: translate(-50%,-80px) scale(1.4); opacity:0}}
+
+  </style>
+</head>
+<body>
+  <main class="container"><!-- 1) Loading / Intro Animation -->
+<section class="intro" aria-label="Intro">
+  <h1 class="typing">One Year to Forever 🌸🤍</h1>
+  <h2 class="names">Ayush ❤️ Manvi <span class="muted">✨</span></h2>
+  <div class="sparkle-area" id="sparkles"></div>
+  <p id="date-counter" class="muted">Loading days…</p>
+</section>
+
+<!-- 2) Love Story Timeline -->
+<section class="timeline" aria-label="Timeline">
+  <h2>Our Journey</h2>
+  <div class="cards">
+    <div class="card">💍 2 Sept 2024 — Proposal Day</div>
+    <div class="card">😂 First Laugh Together</div>
+    <div class="card">🥲 First Fight</div>
+    <div class="card">🤭 Roothna-Manana moments</div>
+    <div class="card">🔥 Addict wali habit confession</div>
+    <div class="card">❤️ Today: Anniversary Proposal</div>
+  </div>
+</section>
+
+<!-- 3) Proposal Conversation (chat UI) -->
+<section class="chat" aria-label="Proposal Conversation">
+  <div class="chat-wrap">
+    <div class="bubble ayush">
+      Ek saal pehle mene tujhe girlfriend banane ke liye propose kiya tha…
+      aur aaj main tujhe <b>wife</b> banane ke liye propose karta hu 💍❤️
+    </div>
+    <div class="bubble manvi">
+      Tu mera <b>permanent headache</b> banega kya? 🤣💍
+      (Mtlb mera <b>pati</b>, mera <b>soulmate</b> forever ❤️)
+    </div>
+    <div class="clearfix"></div>
+  </div>
+</section>
+
+<!-- 4) Anniversary Surprise Section -->
+<section class="surprise" aria-label="Anniversary Surprise">
+  <h2>From <b>Girlfriend</b> → <b>Soulmate</b> → <b>Wife</b> (Forever with You) 💖</h2>
+  <p class="muted">Tap the button to open our Forever Promise</p>
+  <button class="btn" id="openPromise">💌 Click to see our Forever Promise</button>
+</section>
+
+  </main>  <!-- Promise Modal -->  <div class="modal-backdrop" id="backdrop" role="dialog" aria-modal="true" aria-labelledby="promiseTitle" style="display:none;">
+    <div class="modal">
+      <h3 id="promiseTitle">Our Forever Promise 💞</h3>
+      <p>
+        Main wada karta hu — chahe duniya badal jaye, waqt kaisa bhi ho,
+        main hamesha <b>tera</b> rahunga. Sirf tera, aur hamesha ke liye tera. ❤️
+      </p>
+      <div class="actions">
+        <button class="btn close" id="closePromise">Close</button>
+      </div>
+    </div>
+  </div>  <!-- 5) Ending Section with falling petals -->  <section class="ending" aria-label="Ending">
+    <h1>Will you be my permanent headache for life,<br> <b>Mrs. Manvi Ayush?</b> 💍✨</h1>
+  </section>  <script>
+    // ===== Date Counter ("365 days together, Forever to go…") =====
+    (function setDateCounter(){
+      // Anniversary start date: Sept 2, 2024 (local time)
+      const startDate = new Date('2024-09-02T00:00:00');
+      const now = new Date();
+      const diffMs = Math.abs(now - startDate);
+      const days = Math.floor(diffMs / (1000*60*60*24));
+      document.getElementById('date-counter').textContent = `${days} days together, Forever to go…`;
+    })();
+
+    // ===== Sparkles under names after reveal =====
+    function spawnSparkles(){
+      const wrap = document.getElementById('sparkles');
+      const make = ()=>{
+        const s = document.createElement('span');
+        s.className = 'sparkle';
+        s.textContent = '✨';
+        s.style.left = Math.random()*90 + '%';
+        s.style.top = '0px';
+        s.style.opacity = Math.random()*0.5 + 0.5;
+        wrap.appendChild(s);
+        setTimeout(()=>s.remove(), 1600);
+      };
+      // burst of sparkles
+      for(let i=0;i<8;i++) setTimeout(make, i*120);
+    }
+    setTimeout(spawnSparkles, 4400);
+
+    // ===== Floating hearts inside Surprise section =====
+    (function floatingHearts(){
+      const section = document.querySelector('.surprise');
+      function spawn(){
+        const h = document.createElement('div');
+        h.className = 'float-heart';
+        h.textContent = '💖';
+        const left = Math.random()*100; // %
+        h.style.left = left + '%';
+        h.style.bottom = '-10px';
+        h.style.fontSize = (18 + Math.random()*14) + 'px';
+        section.appendChild(h);
+        setTimeout(()=>h.remove(), 3600);
+      }
+      // gentle stream
+      setInterval(spawn, 600);
+    })();
+
+    // ===== Promise Modal =====
+    const openBtn = document.getElementById('openPromise');
+    const backdrop = document.getElementById('backdrop');
+    const closeBtn = document.getElementById('closePromise');
+    openBtn.addEventListener('click', ()=>{ backdrop.style.display='flex'; });
+    closeBtn.addEventListener('click', ()=>{ backdrop.style.display='none'; });
+    backdrop.addEventListener('click', (e)=>{ if(e.target===backdrop) backdrop.style.display='none'; });
+
+    // ===== Ending: Falling petals across the whole page =====
+    function spawnPetal(){
+      const p = document.createElement('div');
+      p.className = 'petal';
+      p.textContent = '🌸';
+      p.style.left = Math.random()*100 + 'vw';
+      p.style.fontSize = (18 + Math.random()*10) + 'px';
+      p.style.animationDuration = (7 + Math.random()*4) + 's';
+      document.body.appendChild(p);
+      setTimeout(()=>p.remove(), 12000);
+    }
+    setInterval(spawnPetal, 500);
+
+    // ===== Heart Cursor Effect (click anywhere -> small hearts pop) =====
+    document.addEventListener('click', function(e){
+      const heart = document.createElement('div');
+      heart.className = 'click-heart';
+      heart.textContent = '💖';
+      heart.style.left = e.pageX + 'px';
+      heart.style.top = e.pageY + 'px';
+      heart.style.fontSize = (16 + Math.random()*12) + 'px';
+      heart.style.transform = 'translate(-50%, 0)';
+      document.body.appendChild(heart);
+      setTimeout(()=>heart.remove(), 1400);
+    });
+  </script></body>
+</html>
